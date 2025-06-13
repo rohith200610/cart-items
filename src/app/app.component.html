@@ -1,0 +1,36 @@
+
+<div class="nav-bar">
+  <ul>
+    <li (click)="showCart=false">Products</li>
+    <li (click)="showCart=true">Cart</li>
+  </ul>
+</div>
+<div *ngIf="!showCart" class="conatiner-products">
+  <div class="input">
+<input type="text" placeholder="Search products..." [(ngModel)]="searchText"/>
+<p>You searched for: {{searchText}}</p>
+<select [(ngModel)]="selectedFilter">
+  <option value="all">All Products</option>
+  <option value="instock">In Stock</option>
+  <option value="outofstock">Out of Stock</option>
+</select>
+</div>
+<div>
+  <h1>Products</h1>
+<div class="products-card-container">
+  <app-product-card *ngFor="let product of filteredProducts()" [product]="product"
+  (addToCart)="addToCart($event) "
+  >
+  
+  </app-product-card>
+</div>
+</div>
+</div>
+<div *ngIf="showCart" class="conatiner-products">
+  <h1>Cart</h1>
+  <div class="products-card-container">
+    <app-cart-card *ngFor="let product of cartList" [product]="product">
+
+    </app-cart-card>
+  </div>
+</div>

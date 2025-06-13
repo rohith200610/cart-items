@@ -1,0 +1,100 @@
+/* Reset some default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* Navbar styling */
+.nav-bar {
+  background-color: #0f172a;
+  padding: 1rem 2rem;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position:fixed;
+  top:0px;
+  right:0px;
+  left:0px;
+  z-index:1;
+}
+
+.nav-bar ul {
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
+}
+
+.nav-bar li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-bar li:hover {
+  color: #38bdf8;
+}
+
+/* Container styling */
+.conatiner-products {
+  padding: 2rem;
+  margin-top:2rem;
+}
+
+/* Search and filter input */
+.input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.input input[type="text"],
+.input select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  min-width: 200px;
+}
+
+.input p {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+/* Product and Cart heading */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+/* Cards container */
+.products-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Example child component styles — can be refined in app-product-card and app-cart-card */
+app-product-card,
+app-cart-card {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+app-product-card:hover,
+app-cart-card:hover {
+  transform: translateY(-5px);
+}
